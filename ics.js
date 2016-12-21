@@ -17,7 +17,7 @@ var ics = function () {
     var calendarEnd = SEPARATOR + 'END:VCALENDAR';
 
     var validDays = ['SU', 'MO', 'TU', 'WE', 'TH', 'FR', 'SA'];
-    var knoxvilleTimezone = 'EST';
+    var knoxvilleTimezone = 'ET';
 
     return {
         /**
