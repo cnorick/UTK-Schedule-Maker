@@ -1,23 +1,37 @@
 // Retrieves the first day of the term from a server.
 function getTermStart(term) {
-    var termArray = term.split(' ');
-    var semester = termArray[0];
-    var year = termArray[1];
-
-    // Insert logic that fetches the term start date from somewhere.\
-
-    return new Date(2017, 0, 11, 0, 0, 0, 0);
+    return getTermDate(term, 'begin');
 }
 
 // Retrieves the last day of the term from a server.
 function getTermEnd(term) {
-    var termArray = term.split(' ');
-    var semester = termArray[0];
+    return getTermDate(term, 'end');
+}
+
+function getTermDate(term, which){
+	var termArray = term.split(' ');
+    var semester = termArray[0].toLowerCase();
     var year = termArray[1];
+	
+	switch(semester){
+		case 'spring':
+			break;
+		case 'mini-term':
+			semester = 'mini';
+			break;
+		case 'summer':
+			break;
+		case 'fall':
+			break;
+	}
 
-    // Insert logic that fetches the term end date from somewhere.
+	var date = moment(termDates[year.toString()][semester][which], "YYYY-MM-DD");
 
-    return new Date(2017, 3, 28, 23, 59, 59, 0);
+	// Set end date to end of day.
+	if(which == 'end')
+		date.endOf('day');
+	
+    return date.toDate();
 }
 
 // Get the 0-based index (matching javascript getDay) from the date abbreviation.
