@@ -1,0 +1,29 @@
+{
+  "manifest_version": 2,
+
+  "name": "UT Schedule Maker",
+  "description": "This extension shows a Google Image search result for the current page",
+  "version": "1.0",
+  "background": {
+    "scripts": [ "background.js", "moment.js", "ics.js", "helpers.js" ],
+    "persistent": false
+  },
+  "icons": {
+    "128": "icon.png"
+  },
+  "author": "Nathan Orick (cnathanorick@gmail.com)",
+  "page_action": {
+    "default_title": "UT Schedule Maker"
+  },
+  "permissions": [
+    "declarativeContent",
+    "activeTab"
+  ],
+  "content_scripts": [
+    {
+      "matches": [ "https://my.utk.edu/*", "https://myutk.utk.edu/*" ],
+      "js": [ "content.js" ]
+    }
+  ],
+  "homepage_url": "https://github.com/cnorick/UTK-Schedule-Maker"
+}
