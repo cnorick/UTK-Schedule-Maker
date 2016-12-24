@@ -8,7 +8,6 @@ This extension solves that problem! All you have to do is:
 2. Go to https://my.utk.edu and choose the schedule you'd like to download.
 3. Click the UT Schedule Maker icon that should now appear next to your URL.
 4. Get on with your life.
-(More details below)
 
 ## How to use:
 View your class schedule at https://my.utk.edu.
